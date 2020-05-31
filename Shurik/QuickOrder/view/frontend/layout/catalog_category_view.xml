@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Shurik_QuickOrder::css/styles.css"/>
+    </head>
+    <body>
+        <referenceBlock name="category.products.list" template="Shurik_QuickOrder::product/list.phtml">
+            <block
+                    class="Shurik\QuickOrder\Block\QuickOrder"
+                    name="quickorder"
+                    as="quick"
+                    template="Shurik_QuickOrder::order.phtml"
+                    before="-"
+            >
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Shurik\QuickOrder\Api\OrderRepositoryInterface" type="Shurik\QuickOrder\Model\OrderRepository"/>
+	<preference for="Shurik\QuickOrder\Api\Data\OrderInterface" type="Shurik\QuickOrder\Model\Data\Order"/>
+	<preference for="Shurik\QuickOrder\Api\Data\OrderSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Shurik\QuickOrder\Model\ResourceModel\Order\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">shurik_quickorder_order</argument>
+			<argument name="resourceModel" xsi:type="string">Shurik\QuickOrder\Model\ResourceModel\Order\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="shurik_quickorder_order_listing_data_source" xsi:type="string">Shurik\QuickOrder\Model\ResourceModel\Order\Grid\Collection</item>
+				<item name="shurik_quickorder_status_listing_data_source" xsi:type="string">Shurik\QuickOrder\Model\ResourceModel\Status\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Shurik\QuickOrder\Api\StatusRepositoryInterface" type="Shurik\QuickOrder\Model\StatusRepository"/>
+	<preference for="Shurik\QuickOrder\Api\Data\StatusInterface" type="Shurik\QuickOrder\Model\Data\Status"/>
+	<preference for="Shurik\QuickOrder\Api\Data\StatusSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Shurik\QuickOrder\Model\ResourceModel\Status\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">shurik_quickorder_status</argument>
+			<argument name="resourceModel" xsi:type="string">Shurik\QuickOrder\Model\ResourceModel\Status\Collection</argument>
+		</arguments>
+	</virtualType>
+</config>

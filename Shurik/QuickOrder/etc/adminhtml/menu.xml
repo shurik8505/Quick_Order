@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Shurik::top_level"
+			 module="Shurik_QuickOrder"
+			 resource="Magento_Backend::content"
+			 sortOrder="9999"
+			 title="Quick Order"/>
+		<add action="shurik_quickorder/order/index"
+			 id="Shurik_QuickOrder::shurik_quickorder_order"
+			 module="Shurik_QuickOrder"
+			 parent="Shurik::top_level"
+			 resource="Magento_Backend::content"
+			 sortOrder="9999"
+			 title="Order"/>
+		<add action="shurik_quickorder/status/index"
+			 id="Shurik_QuickOrder::shurik_quickorder_status"
+			 module="Shurik_QuickOrder"
+			 parent="Shurik::top_level"
+			 resource="Magento_Backend::content"
+			 sortOrder="9999"
+			 title="Status"/>
+	</menu>
+</config>
